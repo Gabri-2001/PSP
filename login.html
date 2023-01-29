@@ -45,6 +45,11 @@
             function log(){
                 var usuario=document.loginform.usuario.value;
                 var password=document.loginform.password.value;
+                
+                if(usuario==""){
+                    document.getElementById("error").innerHTML= "El campo usuario no puede estar vacío"
+                }
+
                 if(usuario=="gabri"){
                     if(password=="gabri"){
                         document.getElementById("demo").innerHTML = "2";
@@ -58,7 +63,7 @@
                         document.getElementById("error").innerHTML= "La contraseña introducida es erronea"
                     }
                 }
-                if(usuario!="gabri"){
+                if(usuario!="gabri" && usuario!=""){
                     document.getElementById("error").innerHTML= "El usuario introducido no existe en nuestra base de datos"
                 }
                 
